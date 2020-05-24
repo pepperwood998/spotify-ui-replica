@@ -1,0 +1,41 @@
+.control-button {
+  background-color: transparent;
+  border: none;
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+  color: var(--color-contrast-low);
+  outline: none;
+  position: relative;
+
+  &--active {
+    color: var(--color-primary);
+  }
+
+  &--circled::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+    border: 1px solid var(--color-contrast-low);
+    --scale-value: 1.07;
+  }
+
+  &:hover {
+    color: var(--color-contrast-lower);
+
+    &.control-button--circled::after {
+      border-color: var(--color-contrast-lower);
+      transform: scale(var(--scale-value));
+      -webkit-transform: scale(var(--scale-value));
+      -moz-transform: scale(var(--scale-value));
+    }
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+}

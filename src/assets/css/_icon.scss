@@ -1,0 +1,90 @@
+@font-face {
+  font-family: 'spoticon';
+  src: url('../../fonts/spoticon/spoticon.eot');
+  src: url('../../fonts/spoticon/spoticon.eot?#iefix')
+      format('embedded-opentype'),
+    url('../../fonts/spoticon/spoticon.woff') format('woff'),
+    url('../../fonts/spoticon/spoticon.ttf') format('truetype'),
+    url('../../fonts/spoticon/spoticon.svg#spokeo') format('svg');
+}
+
+[class*=' spoticon-']::before,
+[class^='spoticon-']::before {
+  font-family: spoticon;
+  font-style: normal;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: inherit;
+  vertical-align: bottom;
+  display: inline-block;
+  text-decoration: inherit;
+}
+
+.spoticon-devices::before {
+  content: '\e900';
+}
+
+.spoticon-heart::before {
+  content: '\e901';
+}
+
+.spoticon-heart-active::before {
+  content: '\e902';
+}
+
+.spoticon-pause::before {
+  content: '\e903';
+}
+
+.spoticon-pinp::before {
+  content: '\e904';
+}
+
+.spoticon-play::before {
+  content: '\e905';
+}
+
+.spoticon-play-queue::before {
+  content: '\e906';
+}
+
+.spoticon-repeat::before {
+  content: '\e907';
+}
+
+.spoticon-repeat-one::before {
+  content: '\e908';
+}
+
+.spoticon-volume-loud::before {
+  content: '\e909';
+}
+
+.spoticon-volume-min::before {
+  content: '\e90a';
+}
+
+.spoticon-volume-mute::before {
+  content: '\e90b';
+}
+
+.spoticon-volume-small::before {
+  content: '\e90c';
+}
+
+.spoticon-shuffle::before {
+  content: '\e90d';
+}
+
+.spoticon-skip-back::before {
+  content: '\e90e';
+}
+
+.spoticon-skip-forward::before {
+  content: '\e90f';
+}
+
+.spoticon-20::before {
+  font-size: 20px;
+}
