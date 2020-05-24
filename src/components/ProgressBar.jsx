@@ -1,16 +1,21 @@
 import PropTypes from 'prop-types';
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import useEffectSkip from './hooks/HookUseEffectSkip';
 
 ProgressBar.propTypes = {
-  label: PropTypes.string
+  label: PropTypes.string,
+  initPer: PropTypes.number,
+  onChangeProgress: PropTypes.func
 };
 ProgressBar.defaultProps = {
-  label: 'Change progress'
+  label: 'Change progress',
+  initPer: 0,
+  onChangeProgress: per => undefined
 };
 
 function ProgressBar(props) {
   const [progressBarActive, setProgressBarActive] = useState(false);
-  const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(props.initPer);
   const [hovered, setHovered] = useState(false);
   const [clicked, setClicked] = useState(false);
   const progressRef = useRef();
@@ -18,7 +23,7 @@ function ProgressBar(props) {
   let progressBarClasses = 'progress-bar';
   if (progressBarActive) progressBarClasses += ' progress-bar--active';
 
-  useEffect(() => {
+  useEffectSkip(() => {
     if (clicked) {
       document.addEventListener('mouseup', handleRelease);
       document.addEventListener('mousemove', handleMouseMove);
@@ -33,6 +38,9 @@ function ProgressBar(props) {
       document.removeEventListener('mousemove', handleMouseMove);
     };
   }, [clicked]);
+  useEffectSkip(() => {
+    props.onChangeProgress(progress);
+  }, [progress]);
 
   const handleClick = e => {
     e.preventDefault();

@@ -7,13 +7,32 @@
   color: var(--color-contrast-low);
   outline: none;
   position: relative;
+  opacity: 0.8;
 
   &--active {
     color: var(--color-primary);
   }
 
+  &--active-dot {
+    color: var(--color-primary);
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      display: block;
+      width: 4px;
+      height: 4px;
+      content: "";
+      border-radius: 50%;
+      background-color: #1db954;
+      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+    }
+  }
+
   &--circled::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     right: 0;
@@ -25,7 +44,7 @@
   }
 
   &:hover {
-    color: var(--color-contrast-lower);
+    opacity: 1;
 
     &.control-button--circled::after {
       border-color: var(--color-contrast-lower);

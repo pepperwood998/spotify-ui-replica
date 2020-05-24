@@ -84,7 +84,7 @@ function NowPlayingBar(props) {
                 </div>
               </div>
               <div className='playback-bar'>
-                <div className='playback-bar__progress-time'>0:27</div>
+                <div className='playback-bar__progress-time'>0:00</div>
                 <ProgressBar />
                 <div className='playback-bar__progress-time'>3:39</div>
               </div>
@@ -115,7 +115,13 @@ function NowPlayingBar(props) {
                       aria-label='Mute'
                     ></button>
                   </div>
-                  <ProgressBar label='Change volume' />
+                  <ProgressBar
+                    label='Change volume'
+                    initPer={50}
+                    onChangeProgress={per => {
+                      console.log(per);
+                    }}
+                  />
                 </div>
               </div>
             </div>
