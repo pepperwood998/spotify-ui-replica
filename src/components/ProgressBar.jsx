@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import useEffectSkip from './hooks/HookUseEffectSkip';
 
 ProgressBar.propTypes = {
@@ -10,7 +10,7 @@ ProgressBar.propTypes = {
 ProgressBar.defaultProps = {
   label: 'Change progress',
   initPer: 0,
-  onChangeProgress: per => undefined
+  onChangeProgress: per => per
 };
 
 function ProgressBar(props) {
