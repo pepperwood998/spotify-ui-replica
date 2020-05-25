@@ -85,7 +85,11 @@ function NowPlayingBar(props) {
               </div>
               <div className='playback-bar'>
                 <div className='playback-bar__progress-time'>0:00</div>
-                <ProgressBar />
+                <ProgressBar
+                  onChangeProgress={per => {
+                    console.log('Song progress', per);
+                  }}
+                />
                 <div className='playback-bar__progress-time'>3:39</div>
               </div>
             </div>
@@ -119,7 +123,7 @@ function NowPlayingBar(props) {
                     label='Change volume'
                     initPer={50}
                     onChangeProgress={per => {
-                      console.log(per);
+                      console.log('Volume amount', per);
                     }}
                   />
                 </div>
