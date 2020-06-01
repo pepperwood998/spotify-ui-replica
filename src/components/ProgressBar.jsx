@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { useRef, useState } from 'react';
-import useEffectSkip from './hooks/HookUseEffectSkip';
+import { useEffectSkip } from './hooks';
 
 ProgressBar.propTypes = {
   label: PropTypes.string,

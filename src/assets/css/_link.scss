@@ -7,3 +7,6 @@
   transition-timing-function: linear;
   color: var(--color-contrast-low);
 }
+a.link-hover-underline:hover {
+  border-color: inherit;
+}

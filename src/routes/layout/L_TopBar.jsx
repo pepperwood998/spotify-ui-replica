@@ -24,7 +24,10 @@ function TopBar(props) {
             title='<<insert_user>>'
             type='button'
           >
-            <figure className='img-wrapper'>
+            <figure
+              className='image-wrapper'
+              style={{ width: '28px', height: '28px', borderRadius: '50%' }}
+            >
               <img
                 src={AvatarPlaceholder}
                 className='image'

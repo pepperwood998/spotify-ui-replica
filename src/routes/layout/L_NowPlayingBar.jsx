@@ -26,7 +26,7 @@ function NowPlayingBar(props) {
                     <div className='icon'>
                       <Music className='target' />
                     </div>
-                    <div className='img-wrapper'>
+                    <div className='image-wrapper'>
                       <img
                         className='image'
                         alt='playlist'
@@ -42,7 +42,12 @@ function NowPlayingBar(props) {
               <div className='track-information ellipsis--normal'>
                 <div className='track-name ellipsis--normal'>
                   <span>
-                    <NavLink to='/release/84938'>Morning Breeze</NavLink>
+                    <NavLink
+                      to='/release/84938'
+                      className='link-hover-underline'
+                    >
+                      Morning Breeze
+                    </NavLink>
                   </span>
                 </div>
                 <div className='track-artists ellipsis--normal font2'>

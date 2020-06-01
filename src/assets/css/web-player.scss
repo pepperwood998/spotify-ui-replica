@@ -4,6 +4,11 @@
 @import './link';
 @import './icon';
 @import './button';
+@import './main-content';
+
+:root {
+  --top-bar-height: 60px;
+}
 
 html,
 body,
@@ -19,7 +24,7 @@ body {
   line-height: 20px;
   letter-spacing: 0.015em;
   text-transform: none;
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-normal);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -36,9 +41,10 @@ button.blur-click {
 
 a {
   color: var(--color-contrast-lower);
+  border-bottom: 1px solid transparent;
 }
 
-.img-wrapper {
+.image-wrapper {
   position: relative;
   overflow: hidden;
   width: inherit;
@@ -96,6 +102,8 @@ a {
 
   &__top-bar {
     grid-area: main-content;
+    height: var(--top-bar-height);
+    z-index: 2;
   }
 
   &__nav-bar {
@@ -103,10 +111,12 @@ a {
     width: 230px;
     min-height: 0;
     background-color: var(--color-contrast-high);
+    z-index: 3;
   }
 
   &__now-playing-bar {
     grid-area: now-playing-bar;
+    z-index: 4;
   }
 
   &__main-content {
@@ -118,7 +128,7 @@ a {
 
 .top-bar {
   position: relative;
-  height: 60px;
+  height: var(--top-bar-height);
   display: flex;
   align-items: center;
   padding: 16px 32px;
@@ -146,10 +156,13 @@ a {
 [dir='rtl'] {
   .top-bar-action {
     margin-left: 16px;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
   }
 
   .user-box .top-bar-action {
     margin: 0 16px 0 0;
+    transform: none;
   }
 }
 .top-bar-action {
@@ -169,6 +182,10 @@ a {
     width: 22px;
     height: 22px;
   }
+}
+.web-history-navigation,
+.user-box {
+  display: flex;
 }
 
 .nav-bar {
@@ -443,13 +460,6 @@ a {
     justify-content: center;
     margin: 0 14px;
   }
-  .track-name a {
-    border-bottom: 1px solid transparent;
-
-    &:hover {
-      border-color: var(--color-contrast-lower);
-    }
-  }
   .track-artists a {
     color: var(--color-contrast-low) !important;
 
@@ -549,5 +559,13 @@ a {
   &__scroll-node {
     height: 100%;
     overflow-y: scroll;
+  }
+  &__scroll-node-spacer {
+    height: var(--top-bar-height);
+    position: sticky;
+    top: 0;
+  }
+  &__scroll-node-child {
+    padding-bottom: 32px;
   }
 }

@@ -1,1 +1,1 @@
-export { deafult as useEffectSkip } from './HookUseEffectSkip';
+export { default as useEffectSkip } from './UseEffectSkip';

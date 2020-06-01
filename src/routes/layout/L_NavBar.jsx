@@ -40,7 +40,7 @@ function NavBar(props) {
           <ul className='entry-points'>
             <li>
               <div className='nav-bar-item'>
-                <NavLink to='/' className='nav-bar-link link-subtle'>
+                <NavLink to='/home' className='nav-bar-link link-subtle'>
                   <div className='nav-bar-link--text-with-icon-container'>
                     <div className='nav-bar-icon off'>
                       <Home />
